@@ -1,0 +1,90 @@
+
+<div  id="wrapper">
+
+     
+    <app-navbar></app-navbar>
+        
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h4 class="head_text">Add New Invoices</h4>
+            <div class="container add_new_cont">
+                <div class="row add_inv_row" >
+                    <div class="col-6">
+                        Custm Name : <input type="text">
+                        Custm Address : <input type="textarea" >
+                    </div>
+                    <div class="col-6">
+                        Inv No: <input type="text">
+                        Inv date : <input type="textarea" >
+                    </div>
+                </div>
+            </div>
+
+            <div class="container inv_cont">
+                <h5 class="head_text">Invoices</h5>
+
+
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Unit</th>
+                        <th scope="col">Price(single)</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Tax (8%)</th>
+                        <th scope="col">Total</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>
+                            <form [formGroup]="ProductCodeForm">
+
+                                <select formControlName="name" (change)="onChange($event)">
+                                  <option disabled>Select A product Code</option>
+                                  
+                                  <option *ngFor="let code of p_code">{{code}}</option>
+                                </select>
+                              
+                                
+                              </form>
+                        </td>
+                        <td>{{item_name}}</td>
+                        <td>
+                            <form [formGroup]="QuantityForm">
+
+                                <select formControlName="unit" (change)="onChangeUnit($event)">
+                                  <option disabled>Select Quantity</option>
+                                  
+                                  <option *ngFor="let num of number">{{num}}</option>
+                                </select>
+                                
+                              
+                                
+                              </form>
+                        </td>
+                        <td>{{price}}</td>
+                        <td>{{price_t}}</td>
+                        <td>{{tax}}</td>
+                        <td>{{total}}</td>
+                       
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+
+                  <input type="button" value="Add" class="text-center">
+
+            </div>
+        
+        </div>
+
+       
+    </div>
+  
+
+</div>

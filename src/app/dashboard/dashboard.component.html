@@ -1,0 +1,63 @@
+
+
+
+
+<div  id="wrapper">
+
+     
+    <app-navbar></app-navbar>
+        
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <!-- <p>dashboard works!</p> -->
+
+
+         <div class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div (click)="Sales()" class="col-2 dash-menu text-center">
+                  <h5> {{sales_c}} </h5>
+                   Total Sales
+                </div>
+                <div (click)="Invoices()" class="col-2 dash-menu text-center">
+                    <h5> {{inv_co}} </h5>
+                    Invoices
+                </div>
+                <div (click)="Stores()" class="col-2 dash-menu text-center">
+                    <h5> {{store_c}} </h5>
+                    Stores
+                </div>
+                <div (click)="Product()" class="col-2 dash-menu text-center">
+                    <h5> {{product_c}} </h5>
+                    Product
+                </div>
+                <div (click)="Pur_Orders()" class="col-2 dash-menu text-center">
+                    <h5> {{pre_ord}} </h5>
+                    Pur. Orders
+                </div>
+                <div class="col-1"></div>
+            </div>
+         </div>
+
+
+
+          <div class="chart-wrapper">
+              <h5>{{Graph_head}}</h5>
+            <canvas baseChart 
+                [datasets]="lineChartData" 
+                [labels]="lineChartLabels" 
+                [options]="lineChartOptions"
+                [colors]="lineChartColors" 
+                [legend]="lineChartLegend" 
+                [chartType]="lineChartType" 
+                [plugins]="lineChartPlugins">
+            </canvas>
+        </div>
+        
+        
+        </div>
+    </div>
+  
+
+</div>
+
